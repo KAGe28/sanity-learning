@@ -1,6 +1,9 @@
 import {defineCliConfig} from 'sanity/cli'
 
 export default defineCliConfig({
+  server: {
+    port: 3334,
+  },
   api: {
     projectId: 'ajsysp9k',
     dataset: 'production'
@@ -13,6 +16,7 @@ export default defineCliConfig({
     autoUpdates: true,
   },
   typegen: {
+    enabled: true,
     path: '../web/src/**/*.{ts,tsx,js,jsx}',
     schema: './schema.json',
     generates: '../web/src/sanity/types.ts',
